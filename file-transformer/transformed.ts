@@ -3,8 +3,8 @@ import * as path from "path";
 import * as http from "http";
 
 // Define paths for input and output files
-const inputFile: string = path.join(__dirname, "inputs.txt");
-const outputFile: string = path.join(__dirname, "outputs.txt");
+const inputFile: string = path.join(__dirname, "input.txt");
+const outputFile: string = path.join(__dirname, "output.txt");
 
 // Function to check if a file exists
 const fileExists = async (filePath: string): Promise<boolean> => {
