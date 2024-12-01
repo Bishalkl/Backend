@@ -121,7 +121,8 @@ const formHandler = (req, res) => {
 
       // for test in terminal
       console.log(result);
-      // first test writing in the file
+
+      // first test writing in the file using async code
       fs.writeFile("user.txt", `Result is ${result}`, (err) => {
         if (err) {
           console.error("Error writing to file:", err);
