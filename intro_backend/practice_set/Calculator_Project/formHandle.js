@@ -112,8 +112,8 @@ const formHandler = (req, res) => {
       // Parsing the form data
       const params = new URLSearchParams(body);
 
-      const number1 = parseInt(params.get("number1"));
-      const number2 = parseInt(params.get("number2"));
+      const number1 = parseFloat(params.get("number1"));
+      const number2 = parseFloat(params.get("number2"));
 
       // calling the addNumber function
       const result = addNumber(number1, number2);
