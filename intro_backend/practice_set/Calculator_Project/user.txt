@@ -1,1 +1,1 @@
-Result is 29440
+Result is 246

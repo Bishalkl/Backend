@@ -5,8 +5,8 @@ const addNumber = require("./addNumber");
 // creating the function for handle form for calculator
 const formHandler = (req, res) => {
   // console.log(req.url, req.method);
-  res.setHeader("Content-Type", "text/html");
   if (req.url === "/") {
+    res.setHeader("Content-Type", "text/html");
     res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +38,7 @@ const formHandler = (req, res) => {
     return res.end();
   }
   if (req.url === "/calculator") {
+    res.setHeader("Content-Type", "text/html");
     res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,9 +124,20 @@ const formHandler = (req, res) => {
       // first test writing in the file
       fs.writeFileSync("user.txt", `Result is ${result}`);
 
-      // Redirecting after calculation
-      res.statusCode = 302;
-      res.setHeader("Location", "/calculator");
+      res.setHeader("Content-Type", "text/html");
+      res.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Simple Calculator</title>
+        </head>
+        <body>
+            <h1>The result is ${result}</h1>
+        </body>
+        </html>
+    `);
       return res.end();
     });
   }
