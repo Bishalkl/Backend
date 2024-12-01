@@ -122,10 +122,27 @@ const formHandler = (req, res) => {
       // for test in terminal
       console.log(result);
       // first test writing in the file
-      fs.writeFileSync("user.txt", `Result is ${result}`);
-
-      res.setHeader("Content-Type", "text/html");
-      res.write(`
+      fs.writeFile("user.txt", `Result is ${result}`, (err) => {
+        if (err) {
+          console.error("Error writing to file:", err);
+          res.setHeader("Content-Type", "text/html");
+          res.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Simple Calculator</title>
+        </head>
+        <body>
+            <h1>There was an error processing your request</h1>
+        </body>
+        </html>
+    `);
+        }
+        console.log("Data written successfully");
+        res.setHeader("Content-Type", "text/html");
+        res.write(`
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -138,7 +155,8 @@ const formHandler = (req, res) => {
         </body>
         </html>
     `);
-      return res.end();
+        return res.end();
+      });
     });
   }
 };
