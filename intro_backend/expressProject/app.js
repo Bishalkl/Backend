@@ -1,4 +1,6 @@
 const express = require("express");
+const userRouter = require("./routes/userRouter");
+const contactRouter = require("./routes/contactRouter");
 const app = express();
 
 // Middleware 1: Log the request path
@@ -19,77 +21,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware to handle GET request to '/'
-app.get("/", (req, res) => {
-  res.send(`<h1>Welcome to the Home Page</h1>`);
-});
-
-// Middleware to handle GET request to `/contact-us`
-app.get("/contact-us", (req, res) => {
-  res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Contact Us</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    line-height: 1.6;
-                    padding: 20px;
-                    max-width: 600px;
-                    margin: 0 auto;
-                }
-                form {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                }
-                input, textarea, button {
-                    padding: 10px;
-                    font-size: 1rem;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                }
-                button {
-                    background-color: #007BFF;
-                    color: white;
-                    border: none;
-                    cursor: pointer;
-                }
-                button:hover {
-                    background-color: #0056b3;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Contact Us</h1>
-            <form action="/contact-us" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
-        </body>
-        </html>
-    `);
-});
-
-// Middleware to handle POST request to `/contact-us`
 app.use(express.urlencoded({ extended: true })); // Middleware to parse form data
-app.post("/contact-us", (req, res) => {
-  const { name, email, message } = req.body;
-  res.send(
-    `<h1>Thank you, ${name}! We have received your email (${email}).</h1>`
-  );
-});
+// Middleware to handle GET request to '/'
+app.use(userRouter);
+
+app.use(contactRouter);
 
 // Start the server
 const PORT = 3024;
