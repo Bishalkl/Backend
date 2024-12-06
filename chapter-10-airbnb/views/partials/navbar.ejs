@@ -1,0 +1,24 @@
+<nav class="bg-red-600 text-white p-4 fixed top-0 left-0 w-full shadow-lg">
+  <div class="flex items-center justify-between max-w-7xl mx-auto">
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-bold">Airbnb</a>
+    <div class="flex space-x-8">
+      <!-- Home Link -->
+      <a
+        href="/"
+        class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out
+        <%= activeTab === 'home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+      >
+        Home
+      </a>
+      <!-- Add Home Link -->
+      <a
+        href="/host/add-home"
+        class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out
+        <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+      >
+        Add Home
+      </a>
+    </div>
+  </div>
+</nav>

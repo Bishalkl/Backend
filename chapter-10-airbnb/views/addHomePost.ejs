@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+
+  </head>
+  <body
+    class="bg-gradient-to-b from-white to-gray-100 min-h-screen flex flex-col"
+  >
+    <!-- Navbar -->
+    <%- include('partials/navbar') %>
+
+    <!-- Main Content -->
+    <div class="flex items-center justify-center flex-grow pt-20">
+      <div
+        class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg text-center"
+      >
+        <h1 class="text-3xl font-semibold text-green-500 mb-6">
+          Home Registered Successfully
+        </h1>
+        <a
+          href="/"
+          class="px-6 py-3 bg-blue-500 text-white font-semibold text-lg rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+        >
+          Go to Home
+        </a>
+      </div>
+    </div>
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+  </body>
+</html>

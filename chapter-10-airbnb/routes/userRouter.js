@@ -1,11 +1,10 @@
 // External Module
 const express = require("express");
-const path = require("path");
 const userRouter = express.Router();
 
-userRouter.get("/", (req, res, next) => {
-  console.log(req.url, req.method);
-  res.sendFile(path.join(__dirname, "../", "views", "home.html"));
-});
+// local Module
+const homesController = require("../controllers/homes");
+
+userRouter.get("/", homesController.goHome);
 
 module.exports = userRouter;
