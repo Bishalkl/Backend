@@ -5,12 +5,11 @@ const hostRouter = express.Router();
 // Local module
 const homesController = require("../controllers/homes");
 
-// routing for get 
+// routing for get
 hostRouter.get("/add-home", homesController.getAddHome);
 
-// routing for post 
+// routing for post
 hostRouter.post("/add-home", homesController.postAddedHome);
 
-// exporting 
-exports.hostRouter = hostRouter;
-
+// exporting
+module.exports = hostRouter;

@@ -5,7 +5,7 @@ const path = require("path");
 
 // Local Module
 const userRouter = require("./routes/userRouter");
-const { hostRouter } = require("./routes/hostRouter");
+const hostRouter = require("./routes/hostRouter");
 const rootdir = require("./utils/pathUtils");
 const errorsController = require("./controllers/error");
 
