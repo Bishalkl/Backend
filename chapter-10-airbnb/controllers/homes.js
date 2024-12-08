@@ -1,6 +1,16 @@
 // Local modules
 const Home = require("../models/home");
 
+exports.getIndex = (req, res, next) => {
+  Home.fetchAll((registeredHomes) =>
+    res.render("store/index", {
+      registeredHomes: registeredHomes,
+      pageTitle: "Index Home",
+      activeTab: "Home",
+    })
+  );
+};
+
 exports.goHome = (req, res, next) => {
   Home.fetchAll((registeredHomes) =>
     res.render("store/home-list", {
@@ -29,5 +39,32 @@ exports.postAddedHome = (req, res, next) => {
   res.render("host/addHomePost", {
     pageTitle: "Add Post",
     activeTab: "add-home",
+  });
+};
+
+exports.getBooking = (req, res, next) => {
+  res.render("store/booking", {
+    pageTitle: "My Bookings",
+    activeTab: "home",
+  });
+};
+
+exports.getFavouriteList = (req, res, next) => {
+  Home.fetchAll((registeredHomes) =>
+    res.render("store/favourite-list", {
+      registeredHomes: registeredHomes,
+      pageTitle: "Favourite",
+      activeTab: "home",
+    })
+  );
+};
+
+exports.HostHome = (req, res, next) => {
+  Home.fetchAll((registeredHomes) => {
+    res.render("host/host-home-list", {
+      registeredHomes: registeredHomes,
+      pageTitle: "Host Home list",
+      activeTab: "home",
+    });
   });
 };

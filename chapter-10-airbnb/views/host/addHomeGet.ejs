@@ -29,6 +29,28 @@
           >
             Add Home
           </a>
+          <!-- Bookings Link -->
+          <a
+            href="/bookings"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'bookings' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Bookings
+          </a>
+
+          <!-- Favourites-->
+          <a
+            href="/favourites"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Favourites
+          </a>
+          <!-- Host home list-->
+          <a
+            href="/host/hostHomelist"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            HostHome
+          </a>
         </div>
       </div>
     </nav>
@@ -126,6 +148,7 @@
         </form>
       </div>
     </div>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white p-4 text-center">
       <p>© 2024 Airbnb. All rights reserved.</p>

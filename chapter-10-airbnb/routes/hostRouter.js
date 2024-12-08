@@ -10,6 +10,7 @@ hostRouter.get("/add-home", homesController.getAddHome);
 
 // routing for post
 hostRouter.post("/add-home", homesController.postAddedHome);
+hostRouter.get("/hostHomelist", homesController.HostHome);
 
 // exporting
 module.exports = hostRouter;

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/output.css" />
-    <title>404 Page Not Found</title>
+    <title><%= pageTitle %></title>
+    <!-- Dynamic pageTitle with EJS -->
   </head>
   <body
     class="bg-gradient-to-b from-white to-gray-100 min-h-screen flex flex-col"
@@ -29,6 +30,28 @@
           >
             Add Home
           </a>
+          <!-- Bookings Link -->
+          <a
+            href="/bookings"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'bookings' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Bookings
+          </a>
+
+          <!-- Favourites-->
+          <a
+            href="/favourites"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Favourites
+          </a>
+          <!-- Host home list-->
+          <a
+            href="/host/hostHomelist"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            HostHome
+          </a>
         </div>
       </div>
     </nav>
@@ -36,8 +59,12 @@
     <!-- Main Content -->
     <div class="flex items-center justify-center flex-grow pt-20 text-center">
       <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
-        <h1 class="text-6xl font-bold text-red-700 mb-4">404</h1>
-        <p class="text-xl text-gray-700 mb-6">Page Not Found</p>
+        <h1 class="text-6xl font-bold text-red-700 mb-4">
+          My Booking will appear here
+        </h1>
+        <p class="text-xl text-gray-700 mb-6">
+          This is a dummy booking page. You can update this content dynamically.
+        </p>
         <a
           href="/"
           class="px-6 py-3 bg-red-700 text-white font-medium text-lg rounded-lg shadow-md hover:bg-red-800 transition duration-300"

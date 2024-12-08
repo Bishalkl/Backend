@@ -35,6 +35,7 @@
           >
             Bookings
           </a>
+
           <!-- Favourites-->
           <a
             href="/favourites"
@@ -57,7 +58,7 @@
     <div class="flex items-center justify-center flex-grow pt-20">
       <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-7xl">
         <h1 class="text-4xl font-semibold text-red-500 mb-10 text-center">
-          Here are our registered Homes
+          Welcome to aribnb index page:
         </h1>
 
         <!-- Home Cards -->
@@ -84,21 +85,12 @@
               Rating: <%= home.rating %> / 5
             </p>
 
-            <!-- Edit and Delete Buttons -->
-            <div class="flex space-x-4 mt-4">
-              <!-- Edit Button -->
-              <button
-                class="py-2 px-6 bg-green-950-blue-500 text-black font-medium rounded-lg hover:bg-blue-600 transition duration-300 text-sm w-full"
-              >
-                Edit
-              </button>
-              <!-- Delete Button -->
-              <button
-                class="py-2 px-6 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition duration-300 text-sm w-full"
-              >
-                Delete
-              </button>
-            </div>
+            <!-- Book Button -->
+            <button
+              class="w-full py-2 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition duration-300 text-sm"
+            >
+              Book
+            </button>
           </div>
           <% }); %>
         </div>
