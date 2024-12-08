@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <title><%= pageTitle %></title>
+  </head>
+  <body
+    class="bg-gradient-to-b from-white to-gray-100 min-h-screen flex flex-col"
+  >
+    <!-- Navigation Bar -->
+    <nav class="bg-red-600 text-white p-4 fixed top-0 left-0 w-full shadow-lg">
+      <div class="flex items-center justify-between max-w-7xl mx-auto">
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-bold">Airbnb</a>
+        <div class="flex space-x-8">
+          <!-- Home Link -->
+          <a
+            href="/homes"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Home
+          </a>
+          <!-- Add Home Link -->
+          <a
+            href="/host/add-home"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Add Home
+          </a>
+          <!-- Bookings Link -->
+          <a
+            href="/bookings"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'bookings' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Bookings
+          </a>
+          <!-- Favourites -->
+          <a
+            href="/favourites"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'favourites' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Favourites
+          </a>
+          <!-- Host Home List -->
+          <a
+            href="/host/hostHomelist"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'hostHomelist' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            Host Home
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex-1 mt-24 text-center">
+      <h2 class="text-2xl font-semibold text-gray-800">
+        You are in the home detail page.
+      </h2>
+    </main>
+  </body>
+</html>

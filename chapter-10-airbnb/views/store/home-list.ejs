@@ -16,7 +16,7 @@
         <div class="flex space-x-8">
           <!-- Home Link -->
           <a
-            href="/"
+            href="/homes"
             class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
           >
             Home
@@ -41,7 +41,13 @@
             href="/favourites"
             class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
           >
-            Favourites
+            Favourites </a
+          ><!-- Host home list-->
+          <a
+            href="/host/hostHomelist"
+            class="py-2 px-6 text-lg font-medium rounded-lg transition duration-300 ease-in-out <%= activeTab === 'add-home' ? 'text-white bg-red-500' : 'text-white hover:bg-red-700 hover:bg-opacity-50' %>"
+          >
+            HostHome
           </a>
         </div>
       </div>
@@ -79,6 +85,7 @@
             </p>
 
             <!-- Book Button -->
+            <a href="/home/<%= home.id %>">Details</a>
             <button
               class="w-full py-2 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition duration-300 text-sm"
             >

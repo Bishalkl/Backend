@@ -9,5 +9,6 @@ userRouter.get("/", homesController.getIndex);
 userRouter.get("/bookings", homesController.getBooking);
 userRouter.get("/homes", homesController.goHome);
 userRouter.get("/favourites", homesController.getFavouriteList);
+userRouter.get("/home/:homeID", homesController.getHomesDetails);
 
 module.exports = userRouter;
