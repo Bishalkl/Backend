@@ -3,18 +3,17 @@ const Home = require("../models/home");
 
 exports.goHome = (req, res, next) => {
   Home.fetchAll((registeredHomes) =>
-    res.render("home.ejs", {
+    res.render("store/home-list", {
       registeredHomes: registeredHomes,
       pageTitle: "Airbnb Home",
       activeTab: "home",
     })
   );
-
 };
 
 exports.getAddHome = (req, res, next) => {
   console.log(req.url, req.method);
-  res.render("addHomeGet.ejs", {
+  res.render("host/addHomeGet", {
     pageTitle: "Add home",
     activeTab: "add-home",
   });
@@ -27,7 +26,7 @@ exports.postAddedHome = (req, res, next) => {
   // creating object
   const home = new Home(houseName, price, location, rating, photo);
   home.save();
-  res.render("addHomePost.ejs", {
+  res.render("host/addHomePost", {
     pageTitle: "Add Post",
     activeTab: "add-home",
   });
