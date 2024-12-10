@@ -33,7 +33,24 @@ module.exports = class Home {
 
   static fetchAll(callback) {
     fs.readFile(homeDataPath, (err, data) => {
-      callback(!err ? JSON.parse(data) : []);
+      if (err) {
+        callback([]);
+        return;
+      }
+
+      // Check if the file is empty
+      if (data.length === 0) {
+        callback([]);
+        return;
+      }
+
+      try {
+        // Try to parse the JSON data
+        callback(JSON.parse(data));
+      } catch (parseError) {
+        console.error("Error parsing JSON:", parseError);
+        callback([]);
+      }
     });
   }
 
@@ -41,6 +58,13 @@ module.exports = class Home {
     this.fetchAll((homes) => {
       const homeFound = homes.find((home) => home.id === homeId);
       callback(homeFound);
+    });
+  }
+
+  static deleteById(homeId, callback) {
+    this.fetchAll((homes) => {
+      homes = homes.filter((home) => home.id !== homeId);
+      fs.writeFile(homeDataPath, JSON.stringify(homes), callback);
     });
   }
 };

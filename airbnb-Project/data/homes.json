@@ -1,1 +1,26 @@
-[{"houseName":"Utsav","price":"1299","location":"Ghaziabad","rating":"4","photoUrl":"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg","id":"1"},{"houseName":"Second House","price":"5000","location":"Ghaziabad","rating":"4","photoUrl":"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg","id":"2"},{"id":"3","houseName":"bishal koirala","price":"4000","location":"Sundarharicha-10, Morang","rating":"5","photoUrl":"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg"}]
+[
+  {
+    "houseName": "Bishal koirala",
+    "price": "2000",
+    "location": "Sundarharicha-10, Morang",
+    "rating": "5",
+    "photoUrl": "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
+    "id": "0.874042743427544"
+  },
+  {
+    "houseName": "Komal koirala",
+    "price": "4000",
+    "location": "Biratchowk-morang",
+    "rating": "4",
+    "photoUrl": "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
+    "id": "0.03349493920809632"
+  },
+  {
+    "houseName": "Sujan Limbu",
+    "price": "5000",
+    "location": "Khorsane - morang",
+    "rating": "5",
+    "photoUrl": "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
+    "id": "0.050747192287348586"
+  }
+]

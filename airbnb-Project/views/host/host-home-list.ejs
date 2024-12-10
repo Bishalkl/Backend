@@ -23,7 +23,11 @@
                 </div>
               </div>
               <a  href="/host/edit-home/<%= home.id%>?editing=true"  class="bg-blue-500 p-2">Edit</a>
-              <a  href="/host/edit-home/"  class="bg-red-500 p-2">Delete</a>
+              <form action="/host/delete-home/<%= home.id%>" method="POST">
+                <button type="submit" name="id" class="bg-red-500 p-2">
+                  Delete
+                </button>
+              </form>
             </div>
           </div>
         <% }) %>
